@@ -1,0 +1,51 @@
+PROJECT STRUCTURE
+---------------
+project-root/
+├── backend/
+│   ├── db/
+│   │   ├── oracle.js         // Handles Oracle database connection and queries.
+│   │   └── sql/
+│   │       ├── create_schema.sql // SQL script to create the database schema and tables.
+│   │       └── procedures.sql    // SQL script containing stored procedures and functions.
+│   ├── controllers/
+│   │   ├── authController.js     // Manages user authentication, login, and registration logic.
+│   │   ├── adminController.js    // Handles administrative functionalities and data management.
+│   │   ├── userController.js     // Manages user-specific operations and data.
+│   │   ├── paymentController.js  // Manages payment processing and related operations.
+│   │   ├── bookingController.js  // Manages booking creation, modification, and retrieval.
+│   │   ├── packageController.js  // Manages package creation, modification, and retrieval.
+│   │   └── itineraryController.js // Manages itinerary creation, modification, and retrieval.
+│   ├── routes/
+│   │   ├── authRoutes.js         // Defines API routes for authentication.
+│   │   ├── adminRoutes.js        // Defines API routes for administrative tasks.
+│   │   ├── userRoutes.js         // Defines API routes for user-specific actions.
+│   │   ├── paymentRoutes.js      // Defines API routes for payment-related actions.
+│   │   ├── bookingRoutes.js      // Defines API routes for booking-related actions.
+│   │   ├── packageRoutes.js      // Defines API routes for package-related actions.
+│   │   └── itineraryRoutes.js    // Defines API routes for itinerary-related actions.
+│   ├── middleware/
+│   │   └── auth.js             // Middleware for authenticating and authorizing requests.
+│   ├── .env                    // Environment variables for configuration.
+│   ├── app.js                  // Main application entry point, sets up server and routes.
+│   ├── package.json            // Project metadata and dependency list for the backend.
+│   └── node_modules/           // Installed Node.js modules for the backend.
+├── frontend/
+│   ├── css/
+│   │   └── style.css           // Global stylesheet for the frontend.
+│   ├── js/
+│   │   ├── auth.js             // Frontend JavaScript for authentication interactions.
+│   │   ├── admin.js            // Frontend JavaScript for admin-specific functionalities.
+│   │   ├── user.js             // Frontend JavaScript for user-specific interactions.
+│   │   ├── payment.js          // Frontend JavaScript for handling payment processes.
+│   │   ├── booking.js          // Frontend JavaScript for handling booking interactions.
+│   │   ├── package.js          // Frontend JavaScript for handling package interactions.
+│   │   └── itinerary.js        // Frontend JavaScript for handling itinerary interactions.
+│   ├── pages/
+│   │   ├── index.html          // Main landing page of the application.
+│   │   ├── register.html       // User registration page.
+│   │   ├── user.html           // User dashboard or profile page.
+│   │   ├── admin.html          // Administrative dashboard page.
+│   │   ├── payments.html       // Frontend page for displaying and managing payments.
+│   │   ├── bookings.html       // Frontend page for displaying and managing bookings.
+│   │   ├── packages.html       // Frontend page for displaying and managing packages.
+│   │   └── itinerary.html      // Frontend page for displaying and managing itineraries.

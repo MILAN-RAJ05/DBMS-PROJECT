@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    
+    <link rel="stylesheet" href="../css/style.css"> 
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>Admin Panel</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li data-section="dashboard" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</li>
+                    <li data-section="packages"><i class="fas fa-box-open"></i> Packages</li>
+                    <li data-section="users"><i class="fas fa-users"></i> Users</li>
+                    <li data-section="bookings"><i class="fas fa-calendar-check"></i> Bookings</li>
+                    <li data-section="payments"><i class="fas fa-credit-card"></i> Payments</li>
+                    <li data-section="itinerary"><i class="fas fa-route"></i> Itinerary</li>
+                    <li id="logout"><i class="fas fa-sign-out-alt"></i> Logout</li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="main-content">
+            <header class="main-header">
+                <div class="header-text">
+                    <h1 class="header-title">Dashboard</h1>
+                    <p class="header-welcome"></p>
+                </div>
+            </header>
+            <div class="content-area" id="content-area">
+                </div>
+        </div>
+    </div>
+
+    <div id="modal-package" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2 id="modal-title">Add Package</h2>
+            <form id="package-form">
+                <input type="hidden" id="package-id" name="package-id">
+                <div class="form-group">
+                    <label for="pkg-title" class="form-label">Title</label>
+                    <input type="text" id="pkg-title" name="title" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="pkg-desc" class="form-label">Description</label>
+                    <textarea id="pkg-desc" name="description" rows="4" class="form-control" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="pkg-price" class="form-label">Price</label>
+                    <input type="number" id="pkg-price" name="price" step="0.01" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="pkg-start" class="form-label">Start Time</label>
+                    <input type="date" id="pkg-start" name="start_time" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="pkg-people" class="form-label">Number of People</label>
+                    <input type="number" id="pkg-people" name="number_of_people" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="pkg-bus" class="form-label">Bus Details</label>
+                    <input type="text" id="pkg-bus" name="bus_details" class="form-control">
+                </div>
+                <div class="form-buttons">
+                    <button type="button" class="btn btn-secondary" id="cancel-btn">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Package</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/admin.js"></script>
+</body>
+</html>

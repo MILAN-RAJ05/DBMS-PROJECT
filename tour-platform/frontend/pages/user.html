@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - Tour Booking</title>
+    <link rel="stylesheet" href="../css/new.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>User Panel</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li data-section="packages" class="active"><i class="fas fa-box"></i> Available Packages</li>
+                    <li data-section="bookings"><i class="fas fa-calendar-check"></i> My Bookings</li>
+                    <li id="logout"><i class="fas fa-sign-out-alt"></i> Logout</li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="main-content">
+            <header class="main-header">
+                <div class="header-text">
+                    <h1 class="header-title">Available Packages</h1>
+                    <p class="header-welcome"></p>
+                </div>
+            </header>
+            <div class="content-area" id="content-area">
+         
+                <p>Loading...</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="custom-modal" class="modal">
+        <div class="modal-content small-modal">
+            <span class="modal-close">&times;</span>
+            <h3 id="modal-msg-title">Notification</h3>
+            <p id="modal-msg-body"></p>
+            <div class="form-buttons" id="modal-actions">
+             
+            </div>
+        </div>
+    </div>
+    
+    <div id="booking-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" data-modal-id="booking-modal">&times;</span>
+            <h2 id="booking-modal-title">Book Package</h2>
+            <form id="booking-form">
+                <input type="hidden" id="package-id-input" name="package-id-input">
+                <div class="form-group">
+                    <label for="pkg-book-title">Package</label>
+                    <input type="text" id="pkg-book-title" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="starting-point">Starting Point</label>
+                    <input type="text" id="starting-point" name="starting_point" required placeholder="e.g., City Center Terminal">
+                </div>
+                <div class="form-buttons">
+                    <button type="button" class="btn btn-secondary" data-modal-id="booking-modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Confirm Booking</button>
+                </div>
+            </form>
+            <div id="payment-section" style="display:none; margin-top: 20px;">
+                <h3>Payment Required</h3>
+                <p>Total amount: <strong id="payment-amount"></strong></p>
+                <input type="hidden" id="booking-id-for-payment">
+                <button type="button" class="btn btn-success" id="process-payment-btn">Process Payment</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/user.js"></script>
+</body>
+</html>
